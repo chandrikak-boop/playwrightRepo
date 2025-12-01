@@ -1,0 +1,43 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.objectSchema = void 0;
+exports.objectSchema = {
+    //   "$schema": "http://json-schema.org/draft-04/schema#",
+    "type": "object",
+    "properties": {
+        "id": {
+            "type": "string"
+        },
+        "name": {
+            "type": "string"
+        },
+        "data": {
+            "type": "object",
+            "properties": {
+                "year": {
+                    "type": "integer"
+                },
+                "price": {
+                    "type": "number"
+                },
+                "CPU model": {
+                    "type": "string"
+                },
+                "Hard disk size": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "year",
+                "price",
+                "CPU model",
+                "Hard disk size"
+            ]
+        }
+    },
+    "required": [
+        "id",
+        "name",
+        "data"
+    ]
+};
