@@ -1,6 +1,6 @@
-import {test,expect} from '@playwright/test';
-import { objectSchema } from '../schema/object.schema';
-import Ajv from 'ajv';
+import {test,expect,page} from '@playwright/test';
+import {validateSchemaZod} from 'playwright-schema-validator'
+import {z} from 'zod';
 
 test('GET',async({request})=>{
     const response=await request.get('https://api.restful-api.dev/objects')
@@ -38,22 +38,25 @@ test('GET',async({request})=>{
 //---------------------- GET single object ----------------------------
 test.only("GET single object",async({request})=>{
     let response=await request.get(`https://api.restful-api.dev/objects/ff8081819782e69e019abae8093c70b8`)
-   // console.log(await response.json());
+   console.log(await response.json());
+   const jsonResponse=await response.json()
     await expect(response.status()).toBe(200);
     await expect(response.statusText()).toBe('OK');
 
-    // const ajv = new Ajv();
-    // const validate = ajv.compile(objectSchema);
-    // const valid = validate(await response.json());
-    // if (!valid) {
-    //     console.log("Invalid schema");
-        
-    //     console.log(validate.errors);
-    // }
-    //expect(valid).toBeTruthy();
-    
-
-
+    //defining schema structure
+    const schema=z.object({
+  id: z.string(),
+  name: z.number(),
+  data: z.object({
+    year: z.number().int().min(1900).max(new Date().getFullYear()), // Validating year as an integer within a reasonable range
+    price: z.number().positive(), // Validating price as a positive number
+    'CPU model': z.string(),
+    'Hard disk size': z.string(),
+    color: z.string()
+  })
+});
+//validating response against schema
+await validateSchemaZod({page},jsonResponse,schema)
 })
 
 //---------------------- PUT----------------------------
