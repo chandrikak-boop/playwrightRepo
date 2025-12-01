@@ -1,4 +1,4 @@
-import {test,expect,page} from '@playwright/test';
+import {test,expect} from '@playwright/test';
 import {validateSchemaZod} from 'playwright-schema-validator'
 import {z} from 'zod';
 
@@ -7,7 +7,7 @@ test('GET',async({request})=>{
     //console.log(await response.json());
     await expect(response.status()).toBe(200);
     await expect(response.statusText()).toBe('OK');
-    await expect(response.headers()['content-type']).toBe('application/json');
+    await expect(response.headers()['content-type']).toContain('application/json');
     //console.log(await response.headers());
     
 });
@@ -26,17 +26,17 @@ test('GET',async({request})=>{
             }
         }
     })
-    console.log(await response.json());
+    const postJson = await response.json();
+    console.log(postJson);
     console.log(await response.status());
-    
+
     await expect(response.status()).toBe(200);
     await expect(response.statusText()).toBe('OK');
-    let jsonBody=await response.json();
-    let userID=jsonBody.id;
+    let userID = postJson.id;
     console.log(`User ID: ${userID}`);
 })
 //---------------------- GET single object ----------------------------
-test.only("GET single object",async({request})=>{
+test.only("GET single object",async({request, page})=>{
     let response=await request.get(`https://api.restful-api.dev/objects/ff8081819782e69e019abae8093c70b8`)
    console.log(await response.json());
    const jsonResponse=await response.json()
