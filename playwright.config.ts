@@ -7,7 +7,7 @@ const config: PlaywrightTestConfig = {
   timeout: 30_000,
   retries:0,
   
-  reporter: [['list'], ['html', { open: 'never' }]],
+  reporter: [['list'], ['html', { open: 'on-failure' }]],
   use: {
     headless: true,
     viewport: { width: 1280, height: 720 },

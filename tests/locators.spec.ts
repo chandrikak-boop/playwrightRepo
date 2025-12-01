@@ -1,4 +1,5 @@
 import {test,expect} from '@playwright/test'
+import { doesNotReject } from 'assert'
 test('',async({browser})=>{
 let context=await browser.newContext()
 let page=await context.newPage()
@@ -38,7 +39,3 @@ console.log(await newwindow.title());
 await page.locator('//div[@class="widget-content"]/input[@id="comboBox"]').click()
 await page.locator('//div[@class="option"]',{hasText:'Item 81'}).click()
 })
-
-
-
-
