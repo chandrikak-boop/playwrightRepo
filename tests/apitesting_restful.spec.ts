@@ -46,7 +46,7 @@ test.only("GET single object",async({request})=>{
     //defining schema structure
     const schema=z.object({
   id: z.string(),
-  name: z.number(),
+  name: z.string(),
   data: z.object({
     year: z.number().int().min(1900).max(new Date().getFullYear()), // Validating year as an integer within a reasonable range
     price: z.number().positive(), // Validating price as a positive number
