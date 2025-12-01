@@ -1,7 +1,5 @@
-//
-
 import {test,expect} from '@playwright/test'
-const STORAGE_STATE_PATH='tests/auth.json'
+const STORAGE_STATE_PATH='auth.json'
 test.use({storageState:STORAGE_STATE_PATH}) //use saved session
 test('home page',async({page})=>{
     await page.goto('https://www.saucedemo.com/inventory.html')
