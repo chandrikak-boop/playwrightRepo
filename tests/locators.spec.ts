@@ -1,6 +1,6 @@
 import {test,expect} from '@playwright/test'
 import { doesNotReject } from 'assert'
-test('',async({browser})=>{
+test('locators @smoke',async({browser})=>{
 let context=await browser.newContext()
 let page=await context.newPage()
 await page.goto('https://testautomationpractice.blogspot.com')

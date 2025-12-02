@@ -36,7 +36,7 @@ test('GET',async({request})=>{
     console.log(`User ID: ${userID}`);
 })
 //---------------------- GET single object ----------------------------
-test.only("GET single object",async({request, page})=>{
+test.only("GET single object @smoke",async({request, page})=>{
     let response=await request.get(`https://api.restful-api.dev/objects/ff8081819782e69e019abae8093c70b8`)
    console.log(await response.json());
    const jsonResponse=await response.json()

@@ -1,7 +1,7 @@
 import { test, expect } from '@playwright/test';
 import {FlightBookingPage} from '../../pages/flipkart/flight_booking.page.ts';
 
-test('Flipkart Flight Booking', async ({ browser }) => {
+test('Flipkart Flight Booking @smoke', async ({ browser }) => {
   let context=await browser.newContext(
     {
         'permissions':[]
