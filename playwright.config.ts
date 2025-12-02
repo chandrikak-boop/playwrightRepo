@@ -17,9 +17,10 @@ const config: PlaywrightTestConfig = {
     trace:'on-first-retry'
   },
   projects: [
-    { name: 'Chromium', use: { browserName: 'chromium',storageState:'tests/auth.json'},dependencies:['setup']},
-    //{ name: 'Firefox', use: { browserName: 'firefox' } },
-    {name:"setup",testMatch:['login.spec.ts'],use:{browserName: 'chromium',storageState:undefined}}
+   // { name: 'Chromium_usersession', use: { browserName: 'chromium',storageState:'tests/auth.json'},dependencies:['setup']},
+   // { name: 'Firefox', use: { browserName: 'firefox' } },
+   // {name:"setup",testMatch:['login.spec.ts'],use:{browserName: 'chromium',storageState:undefined}},
+    { name: 'Chromium', use: { browserName: 'chromium' } }
   ],
 };
 

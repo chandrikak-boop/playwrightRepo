@@ -14,7 +14,7 @@ await page.goto('https://testautomationpractice.blogspot.com/#')
 //dragTo
 await page.locator('#draggable').dragTo(page.locator('#droppable'))
 
-//---------------------------------------------------------------------------------
+//---------------------------------------------------------------------------------------
 //sliders
 await page.locator('div span[class="ui-slider-handle ui-corner-all ui-state-default"]').hover()
 await page.mouse.down()

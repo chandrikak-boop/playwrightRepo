@@ -2,9 +2,9 @@ import {test,expect} from '@playwright/test';
 import {validateSchemaZod} from 'playwright-schema-validator'
 import {z} from 'zod';
 
-test('GET',async({request})=>{
+test.only('GET',async({request})=>{
     const response=await request.get('https://api.restful-api.dev/objects')
-    //console.log(await response.json());
+    console.log(await response.json());
     await expect(response.status()).toBe(200);
     await expect(response.statusText()).toBe('OK');
     await expect(response.headers()['content-type']).toContain('application/json');
@@ -36,7 +36,7 @@ test('GET',async({request})=>{
     console.log(`User ID: ${userID}`);
 })
 //---------------------- GET single object ----------------------------
-test.only("GET single object @smoke",async({request, page})=>{
+test("GET single object @smoke",async({request, page})=>{
     let response=await request.get(`https://api.restful-api.dev/objects/ff8081819782e69e019abae8093c70b8`)
    console.log(await response.json());
    const jsonResponse=await response.json()
@@ -94,9 +94,9 @@ test('PATCH',async({request})=>{
 })
 
 //---------------------- DELETE ----------------------------
-// test('DELETE',async({request})=>{
-// const response=await request.delete('https://api.restful-api.dev/objects/ff8081819782e69e019abadc06f3704a')
-// console.log(await response.status());
-// await expect(response.status()).toBe(200);
-// console.log(response.statusText())
-// })
+test('DELETE',async({request})=>{
+const response=await request.delete('https://api.restful-api.dev/objects/ff8081819782e69e019abadc06f3704a')
+console.log(await response.status());
+await expect(response.status()).toBe(200);
+console.log(response.statusText())
+})

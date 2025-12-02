@@ -19,10 +19,6 @@ test('POST', async ({ request }) => {
     },
   });
 
-
-
-
-
   const jsonBody = await response.json();
   console.log(jsonBody);
 
