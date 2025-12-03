@@ -3,7 +3,7 @@ name: Playwright Scheduled Tests
 on:
   workflow_dispatch:  # manual run
   schedule:
-    - cron: '*/3 * * * *'   # 12:20 PM IST
+    - cron: '*/5 * * * *'   # 12:20 PM IST
 jobs:
   test:
     timeout-minutes: 60
