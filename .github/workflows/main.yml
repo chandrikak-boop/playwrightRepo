@@ -3,7 +3,7 @@ name: Playwright Scheduled Tests
 on:
   workflow_dispatch:   # manual trigger
   schedule:
-    - cron: '*/5 * * * *'   # every 5 minutes (UTC)
+    - cron: '*/15 * * * *'   # every 5 minutes (UTC)
 
 jobs:
   test:
