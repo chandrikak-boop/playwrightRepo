@@ -43,7 +43,6 @@ test('Get APIToken',async({request})=>{
     console.log(jsonBody);
 })
 
-
 //jwtToken:eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1c2VyNDAwQGdtYWlsLmNvbSBTSE9QUEVSIiwiZXhwIjoxNzY0MTc2MDg0LCJpYXQiOjE3NjQxNDAwODR9.FaNutCjg74TAJGJaarcf2jcxm9oEAtdJMShN7nfJCCo
 
 test.only('GET',async({request})=>{
