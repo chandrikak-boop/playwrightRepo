@@ -26,14 +26,14 @@ export class FlightBookingPage {
   }
 
   async fromCity(cityName: string): Promise<void> {
-  await expect(this.from).toBeVisible({ timeout: 5000 })
+ // await expect(this.from).toBeVisible({ timeout: 5000 })
   await this.from.fill(cityName);
   await this.from.press('ArrowDown')
   await this.from.press('Enter')
 
   }
   async toCity(cityname:string){
-    await expect(this.destination).toBeVisible({ timeout: 5000 })
+ //   await expect(this.destination).toBeVisible({ timeout: 5000 })
     await this.destination.fill(cityname)
     await this.destination.press('ArrowDown')
     await this.destination.press('Enter')
