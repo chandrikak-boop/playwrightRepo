@@ -1,5 +1,5 @@
 import {test} from '@playwright/test'
-test('dialogs',async({page})=>{
+test('dialogs @smoke',async({page})=>{
 page.on('dialog',dialog=>{
     console.log(dialog.message());
     console.log(dialog.type());
