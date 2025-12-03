@@ -21,6 +21,3 @@ await page.goto('https://www.amazon.com')
 test('amazon1',async({page})=>{
 await page.goto('https://www.amazon.com')
 })
-test('amazon2',async({page})=>{
-await page.goto('https://www.amazon.com')
-})
