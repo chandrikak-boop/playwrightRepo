@@ -1,5 +1,7 @@
 import { PlaywrightTestConfig } from '@playwright/test';
+import dotenv from 'dotenv';
 
+dotenv.config(); // loads .env file
 const config: PlaywrightTestConfig = {
   testDir: './tests',
   workers:2,
@@ -9,6 +11,7 @@ const config: PlaywrightTestConfig = {
   
   reporter: [['list'], ['html', { open: 'on-failure' }]],
   use: {
+    baseURL: process.env.BASE_URL, // This should now be defined
     headless: true,
     viewport: { width: 1280, height: 720 },
     ignoreHTTPSErrors: true,
