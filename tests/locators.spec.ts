@@ -17,8 +17,8 @@ for(let day of days)
 }
 await page.getByRole('combobox',{name:'Country:'}).selectOption(['India','Germany'])
 await page.getByRole('listbox',{name:'Colors:'}).selectOption(['Red','Blue'])
-await page.setInputFiles('#singleFileInput','/Users/testvagranttechnologies/Documents/testfile.rtf')
-await page.setInputFiles('#multipleFilesInput',['/Users/testvagranttechnologies/Documents/testfile.rtf','/Users/testvagranttechnologies/Documents/testfile1.rtf'])
+//await page.setInputFiles('#singleFileInput','/Users/testvagranttechnologies/Documents/testfile.rtf')
+//await page.setInputFiles('#multipleFilesInput',['/Users/testvagranttechnologies/Documents/testfile.rtf','/Users/testvagranttechnologies/Documents/testfile1.rtf'])
 /*//Handling New Tab
 let [newpage]=await Promise.all([
     context.waitForEvent('page'),

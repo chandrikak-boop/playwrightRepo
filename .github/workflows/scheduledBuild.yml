@@ -2,7 +2,7 @@ name: Playwright Scheduled Tests
 
 on:
   schedule:
-    - cron: '50 6 * * *'   # 12:20 PM IST
+    - cron: '* * * * *'   # 12:20 PM IST
 
 jobs:
   test:
