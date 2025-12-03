@@ -1,8 +1,8 @@
-name: Playwright Nightly Tests
+name: Playwright Scheduled Tests
 
 on:
   schedule:
-    - cron: '41 6 * * *'   # 12:11 pm IST
+    - cron: '50 6 * * *'   # 12:20 PM IST
 
 jobs:
   test:
