@@ -1,0 +1,6 @@
+🚨 locator.waitFor: Timeout 10000ms exceeded.
+Call log:
+  - waiting for locator('h6:has-text("Dashboard")') to be visible
+    - waiting for navigation to finish...
+    - navigated to "https://opensource-demo.orangehrmlive.com/web/index.php/auth/login"
+

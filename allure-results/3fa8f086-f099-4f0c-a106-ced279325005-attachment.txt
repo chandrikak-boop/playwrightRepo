@@ -1,0 +1,9 @@
+🚨 locator.fill: Target page, context or browser has been closed
+Call log:
+  - waiting for getByPlaceholder('Username')
+    - locator resolved to <input autofocus="" name="username" data-v-1f99f73c="" placeholder="Username" class="oxd-input oxd-input--focus"/>
+    - fill("Admin123")
+  - attempting fill action
+    - waiting for element to be visible, enabled and editable
+  - element was detached from the DOM, retrying
+
