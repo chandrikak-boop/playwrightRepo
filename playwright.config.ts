@@ -30,10 +30,10 @@ const config: PlaywrightTestConfig = {
     trace:'on'
   },
   projects: [
-   // { name: 'Chromium_usersession', use: { browserName: 'chromium',storageState:'tests/auth.json'},dependencies:['setup']},
-   // { name: 'Firefox', use: { browserName: 'firefox' } },
-   // {name:"setup",testMatch:['login.spec.ts'],use:{browserName: 'chromium',storageState:undefined}},
-    { name: 'Chromium', use: { browserName: 'chromium' } }
+   { name: 'chromium', use: { browserName: 'chromium',storageState:'tests/auth.json'},dependencies:['setup']},
+//   { name: 'Firefox', use: { browserName: 'firefox' } },
+   {name:"setup",testMatch:['login.spec.ts'],use:{browserName: 'chromium',storageState:undefined}},
+ //   { name: 'Chromium', use: { browserName: 'chromium' } }
   ],
 };
 
