@@ -29,4 +29,4 @@ jobs:
       - name: Run Playwright + Percy tests
         env:
           PERCY_TOKEN: ${{ secrets.PERCY_TOKEN }}
-        run: npx percy exec -- npx playwright test
+        run: npx percy exec -- npx playwright test screenshotComparision.spec.js
